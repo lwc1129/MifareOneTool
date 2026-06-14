@@ -7,7 +7,9 @@ public partial class UidInputDialog : Window
 {
     public string? Result { get; private set; }
 
-    public UidInputDialog(string initialValue = "")
+    public UidInputDialog() : this("") { }
+
+    public UidInputDialog(string initialValue)
     {
         InitializeComponent();
         UidBox.Text = initialValue;
