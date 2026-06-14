@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MifareOneTool.UI.ViewModels"
+        x:Class="MifareOneTool.UI.Views.HardNesDialog"
+        Title="Hard Nested Attack"
+        Width="420" Height="320"
+        MinWidth="380" MinHeight="280"
+        CanResize="False">
+
+    <StackPanel Margin="16" Spacing="12">
+        <TextBlock Text="Known key (12 hex chars):" FontWeight="SemiBold"/>
+        <TextBox x:Name="KeyEdit" MaxLength="12" Watermark="e.g. FFFFFFFFFFFF"
+                 Text="{Binding KnownKey}"/>
+
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto">
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Source sector:" FontWeight="SemiBold"/>
+            <TextBox  Grid.Row="1" Grid.Column="0" Margin="0,0,8,0"
+                      Text="{Binding Sector1}" MaxLength="2"/>
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Spacing="8">
+                <RadioButton Content="Key A" IsChecked="{Binding Key1IsA}" GroupName="Key1"/>
+                <RadioButton Content="Key B" IsChecked="{Binding Key1IsB}" GroupName="Key1"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Target sector:" FontWeight="SemiBold"/>
+            <TextBox  Grid.Row="1" Grid.Column="1"
+                      Text="{Binding Sector2}" MaxLength="2"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="8">
+                <RadioButton Content="Key A" IsChecked="{Binding Key2IsA}" GroupName="Key2"/>
+                <RadioButton Content="Key B" IsChecked="{Binding Key2IsB}" GroupName="Key2"/>
+            </StackPanel>
+        </Grid>
+
+        <CheckBox Content="Collect only (no crack)" IsChecked="{Binding CollectOnly}"/>
+
+        <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right" Margin="0,8,0,0">
+            <Button Content="Cancel" Command="{Binding CancelCommand}" MinWidth="80"/>
+            <Button Content="OK"     Command="{Binding OkCommand}"     MinWidth="80"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

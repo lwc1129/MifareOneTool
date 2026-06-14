@@ -1,10 +1,11 @@
+using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MifareOneTool.Core.Services;
 using MifareOneTool.UI.Services;
+using MifareOneTool.UI.Views;
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace MifareOneTool.UI.ViewModels;
@@ -22,6 +23,7 @@ public partial class MainWindowViewModel : ObservableObject
     [ObservableProperty] private string? _selectedDevice;
     [ObservableProperty] private string? _selectedLanguage;
 
+    public Window? Owner { get; set; }
     public ObservableCollection<string> Devices { get; } = new();
 
     // Display names in their own script so the combo is always readable
@@ -143,16 +145,35 @@ public partial class MainWindowViewModel : ObservableObject
     private void Exit() => Environment.Exit(0);
 
     [RelayCommand]
-    private void OpenHexTool() => AppendLog("S50HTool — TODO: open window");
+    private void OpenHexTool()
+    {
+        var win = new HexToolWindow();
+        win.Show(Owner!);
+    }
 
     [RelayCommand]
-    private void OpenDiff() => AppendLog("Diff — TODO: open window");
+    private void OpenDiff()
+    {
+        var win = new DiffWindow();
+        win.Show(Owner!);
+    }
 
     [RelayCommand]
-    private void OpenHardNes() => AppendLog("Hard Nested — TODO: open window");
+    private async Task OpenHardNesAsync()
+    {
+        var dlg = new HardNesDialog();
+        await dlg.ShowDialog(Owner!);
+        var vm = (HardNesDialogViewModel)dlg.DataContext!;
+        if (vm.Confirmed)
+            AppendLog($"Hard Nested args: {vm.GetArg()}");
+    }
 
     [RelayCommand]
-    private void OpenMff08() => AppendLog("MFF08 — TODO: open window");
+    private void OpenMff08()
+    {
+        var win = new Mff08Window();
+        win.Show(Owner!);
+    }
 
     [RelayCommand]
     private void About() => AppendLog("MifareOneTool — cross-platform Avalonia UI");

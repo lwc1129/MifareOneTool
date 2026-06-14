@@ -3,12 +3,12 @@ using MifareOneTool.UI.ViewModels;
 
 namespace MifareOneTool.UI.Views;
 
-public partial class MainWindow : Window
+public partial class Mff08Window : Window
 {
-    public MainWindow()
+    public Mff08Window()
     {
         InitializeComponent();
-        var vm = new MainWindowViewModel();
+        var vm = new Mff08WindowViewModel();
         vm.Owner = this;
         DataContext = vm;
     }

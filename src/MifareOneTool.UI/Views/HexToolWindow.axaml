@@ -1,0 +1,123 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MifareOneTool.UI.ViewModels"
+        x:Class="MifareOneTool.UI.Views.HexToolWindow"
+        Title="S50HTool"
+        Width="900" Height="680"
+        MinWidth="800" MinHeight="560">
+
+    <DockPanel>
+        <!-- Menu bar -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New"          Command="{Binding NewCommand}"/>
+                <MenuItem Header="Open..."      Command="{Binding OpenCommand}"      InputGesture="Ctrl+O"/>
+                <MenuItem Header="Save"         Command="{Binding SaveCommand}"      InputGesture="Ctrl+S"/>
+                <MenuItem Header="Save As..."   Command="{Binding SaveAsCommand}"/>
+                <Separator/>
+                <MenuItem Header="Import MCT..."    Command="{Binding ImportMctCommand}"/>
+                <MenuItem Header="Export MCT..."    Command="{Binding ExportMctCommand}"/>
+                <MenuItem Header="Export Key Dict..." Command="{Binding ExportKeyDictCommand}"/>
+                <Separator/>
+                <MenuItem Header="Close"        Command="{Binding CloseCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Modify UID..."        Command="{Binding ModifyUidCommand}"/>
+                <MenuItem Header="List All Keys"        Command="{Binding ListKeysCommand}"/>
+                <MenuItem Header="Check Full Card"      Command="{Binding CheckCardCommand}"/>
+                <MenuItem Header="Check &amp; Fix Card" Command="{Binding FixCardCommand}"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Main layout: sector list | editor | log -->
+        <Grid ColumnDefinitions="180,*" RowDefinitions="*">
+
+            <!-- Left: sector list -->
+            <Border Grid.Column="0" BorderBrush="#CCCCCC" BorderThickness="0,0,1,0">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Sector List"
+                               FontWeight="SemiBold" Margin="8,6,0,4"/>
+                    <ListBox ItemsSource="{Binding SectorInfos}"
+                             SelectedIndex="{Binding SelectedSectorIndex}"
+                             FontFamily="Courier New,Consolas,monospace"
+                             FontSize="11"/>
+                </DockPanel>
+            </Border>
+
+            <!-- Right: editor + log -->
+            <Grid Grid.Column="1" RowDefinitions="Auto,*">
+
+                <!-- Sector editor panel -->
+                <Border Grid.Row="0" Padding="10" BorderBrush="#CCCCCC"
+                        BorderThickness="0,0,0,1">
+                    <StackPanel Spacing="6">
+                        <TextBlock x:Name="LabelCurSec"
+                                   Text="{Binding CurrentSectorLabel}"
+                                   FontWeight="SemiBold"/>
+
+                        <!-- Data blocks -->
+                        <Grid ColumnDefinitions="60,*" RowDefinitions="Auto,Auto,Auto">
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Block 0:" VerticalAlignment="Center"/>
+                            <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding Block0Text}"
+                                       FontFamily="Courier New,Consolas,monospace" MaxLength="32"
+                                       Background="{Binding Block0Color}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Block 1:" VerticalAlignment="Center"/>
+                            <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding Block1Text}"
+                                       FontFamily="Courier New,Consolas,monospace" MaxLength="32"
+                                       Background="{Binding Block1Color}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Block 2:" VerticalAlignment="Center"/>
+                            <TextBox   Grid.Row="2" Grid.Column="1" Text="{Binding Block2Text}"
+                                       FontFamily="Courier New,Consolas,monospace" MaxLength="32"
+                                       Background="{Binding Block2Color}"/>
+                        </Grid>
+
+                        <!-- Keys -->
+                        <Grid ColumnDefinitions="60,*,60,*">
+                            <TextBlock Grid.Column="0" Text="Key A:"  VerticalAlignment="Center"/>
+                            <TextBox   Grid.Column="1" Text="{Binding KeyAText}"
+                                       FontFamily="Courier New,Consolas,monospace" MaxLength="12"
+                                       Background="{Binding KeyAColor}" Margin="0,0,8,0"/>
+                            <TextBlock Grid.Column="2" Text="Key B:"  VerticalAlignment="Center"/>
+                            <TextBox   Grid.Column="3" Text="{Binding KeyBText}"
+                                       FontFamily="Courier New,Consolas,monospace" MaxLength="12"
+                                       Background="{Binding KeyBColor}"/>
+                        </Grid>
+
+                        <!-- Access bits -->
+                        <Grid ColumnDefinitions="80,*,80,*,80,*,80,*">
+                            <TextBlock Grid.Column="0" Text="Block 0 AC:" VerticalAlignment="Center" FontSize="11"/>
+                            <ComboBox  Grid.Column="1" ItemsSource="{Binding AcDataOptions}"
+                                       SelectedIndex="{Binding AcBit0}" FontSize="11"/>
+                            <TextBlock Grid.Column="2" Text="Block 1 AC:" VerticalAlignment="Center" FontSize="11"/>
+                            <ComboBox  Grid.Column="3" ItemsSource="{Binding AcDataOptions}"
+                                       SelectedIndex="{Binding AcBit1}" FontSize="11"/>
+                            <TextBlock Grid.Column="4" Text="Block 2 AC:" VerticalAlignment="Center" FontSize="11"/>
+                            <ComboBox  Grid.Column="5" ItemsSource="{Binding AcDataOptions}"
+                                       SelectedIndex="{Binding AcBit2}" FontSize="11"/>
+                            <TextBlock Grid.Column="6" Text="Key/AC:"    VerticalAlignment="Center" FontSize="11"/>
+                            <ComboBox  Grid.Column="7" ItemsSource="{Binding AcTrailerOptions}"
+                                       SelectedIndex="{Binding AcBit3}" FontSize="11"/>
+                        </Grid>
+
+                        <Button Content="Apply Changes (Enter)" Command="{Binding ApplyChangesCommand}"
+                                HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Log output -->
+                <DockPanel Grid.Row="1" Margin="8">
+                    <TextBlock DockPanel.Dock="Top" Text="Output"
+                               FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <ScrollViewer>
+                        <TextBox Text="{Binding LogText}"
+                                 IsReadOnly="True"
+                                 AcceptsReturn="True"
+                                 FontFamily="Courier New,Consolas,monospace"
+                                 TextWrapping="Wrap"
+                                 VerticalAlignment="Stretch"/>
+                    </ScrollViewer>
+                </DockPanel>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>

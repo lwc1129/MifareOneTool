@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MifareOneTool.UI.ViewModels"
+        x:Class="MifareOneTool.UI.Views.Mff08Window"
+        Title="MFF08 Tool"
+        Width="600" Height="450"
+        MinWidth="500" MinHeight="380">
+
+    <DockPanel Margin="8">
+        <Border DockPanel.Dock="Top" BorderBrush="#CCCCCC" BorderThickness="1"
+                CornerRadius="4" Padding="8" Margin="0,0,0,8">
+            <StackPanel Spacing="6">
+                <TextBlock Text="MFF08 Hardened Card Tool" FontWeight="SemiBold"/>
+
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBox x:Name="KeyfileBox" Text="{Binding KeyfilePath}"
+                             Watermark="Last-write dump file (for key write)..."
+                             Width="350" IsReadOnly="True"/>
+                    <Button Content="Browse..." Command="{Binding BrowseKeyfileCommand}"/>
+                    <Button Content="Clear"    Command="{Binding ClearKeyfileCommand}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,4,0,0">
+                    <Button Content="Write Empty Card" Command="{Binding WriteEmptyCommand}"
+                            MinWidth="140" IsEnabled="{Binding !IsBusy}"/>
+                    <Button Content="Write with Key"   Command="{Binding WriteWithKeyCommand}"
+                            MinWidth="140" IsEnabled="{Binding !IsBusy}"/>
+                </StackPanel>
+
+                <ProgressBar IsIndeterminate="{Binding IsBusy}" Height="4" IsVisible="{Binding IsBusy}"/>
+            </StackPanel>
+        </Border>
+
+        <TextBlock DockPanel.Dock="Top" Text="Log" FontWeight="SemiBold" Margin="0,0,0,4"/>
+        <ScrollViewer>
+            <TextBox Text="{Binding LogText}"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     FontFamily="Courier New,Consolas,monospace"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Stretch"/>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
