@@ -1548,6 +1548,15 @@ namespace MifareOneTool
                 Application.Restart();
 
             }
+            else if (comboBox1.SelectedItem.ToString() == Resources.繁體中文)
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh-TW");
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-TW");
+                Properties.Settings.Default.Language = "zh-TW";
+                Properties.Settings.Default.Save();
+                Application.Restart();
+
+            }
         }
     }
 }

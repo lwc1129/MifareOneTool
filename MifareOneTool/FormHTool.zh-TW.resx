@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonSaveSectorEdit.Text" xml:space="preserve">
+    <value>修改扇區(Enter)</value>
+  </data>
+  <data name="Column1.HeaderText" xml:space="preserve">
+    <value>扇區</value>
+  </data>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>KeyAB讀寫及增減值</value>
+  </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>[唯讀]KeyAB讀及減值/不可寫及增值</value>
+  </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>[唯讀]KeyAB讀/不可寫及增減值</value>
+  </data>
+  <data name="comboBox1.Items3" xml:space="preserve">
+    <value>KeyB讀寫/不可增減值</value>
+  </data>
+  <data name="comboBox1.Items4" xml:space="preserve">
+    <value>KeyAB讀/KeyB寫/不可增減值</value>
+  </data>
+  <data name="comboBox1.Items5" xml:space="preserve">
+    <value>[唯讀]KeyB讀/不可寫及增減值</value>
+  </data>
+  <data name="comboBox1.Items6" xml:space="preserve">
+    <value>KeyAB讀及減值/KeyB寫及增值</value>
+  </data>
+  <data name="comboBox1.Items7" xml:space="preserve">
+    <value>[唯讀]鎖死該扇區</value>
+  </data>
+  <data name="comboBox2.Items" xml:space="preserve">
+    <value>KeyAB讀寫及增減值</value>
+  </data>
+  <data name="comboBox2.Items1" xml:space="preserve">
+    <value>[唯讀]KeyAB讀及減值/不可寫及增值</value>
+  </data>
+  <data name="comboBox2.Items2" xml:space="preserve">
+    <value>[唯讀]KeyAB讀/不可寫及增減值</value>
+  </data>
+  <data name="comboBox2.Items3" xml:space="preserve">
+    <value>KeyB讀寫/不可增減值</value>
+  </data>
+  <data name="comboBox2.Items4" xml:space="preserve">
+    <value>KeyAB讀/KeyB寫/不可增減值</value>
+  </data>
+  <data name="comboBox2.Items5" xml:space="preserve">
+    <value>[唯讀]KeyB讀/不可寫及增減值</value>
+  </data>
+  <data name="comboBox2.Items6" xml:space="preserve">
+    <value>KeyAB讀及減值/KeyB寫及增值</value>
+  </data>
+  <data name="comboBox2.Items7" xml:space="preserve">
+    <value>[唯讀]鎖死該扇區</value>
+  </data>
+  <data name="comboBox3.Items" xml:space="preserve">
+    <value>KeyAB讀寫及增減值</value>
+  </data>
+  <data name="comboBox3.Items1" xml:space="preserve">
+    <value>[唯讀]KeyAB讀及減值/不可寫及增值</value>
+  </data>
+  <data name="comboBox3.Items2" xml:space="preserve">
+    <value>[唯讀]KeyAB讀/不可寫及增減值</value>
+  </data>
+  <data name="comboBox3.Items3" xml:space="preserve">
+    <value>KeyB讀寫/不可增減值</value>
+  </data>
+  <data name="comboBox3.Items4" xml:space="preserve">
+    <value>KeyAB讀/KeyB寫/不可增減值</value>
+  </data>
+  <data name="comboBox3.Items5" xml:space="preserve">
+    <value>[唯讀]KeyB讀/不可寫及增減值</value>
+  </data>
+  <data name="comboBox3.Items6" xml:space="preserve">
+    <value>KeyAB讀及減值/KeyB寫及增值</value>
+  </data>
+  <data name="comboBox3.Items7" xml:space="preserve">
+    <value>[唯讀]鎖死該扇區</value>
+  </data>
+  <data name="comboBox4.Items" xml:space="preserve">
+    <value>[不可逆]KeyA:A寫/AC:A唯讀/KeyB:A讀寫</value>
+  </data>
+  <data name="comboBox4.Items1" xml:space="preserve">
+    <value>KeyA:A寫/AC:A讀寫/KeyB:A讀寫</value>
+  </data>
+  <data name="comboBox4.Items2" xml:space="preserve">
+    <value>[不可逆]KeyA:不能讀寫/AC:A唯讀/KeyB:A讀</value>
+  </data>
+  <data name="comboBox4.Items3" xml:space="preserve">
+    <value>KeyA:B寫/AC:A唯讀B讀寫/KeyB:B寫</value>
+  </data>
+  <data name="comboBox4.Items4" xml:space="preserve">
+    <value>[不可逆]KeyA:B寫/AC:AB唯讀/KeyB:B寫</value>
+  </data>
+  <data name="comboBox4.Items5" xml:space="preserve">
+    <value>KeyA:不能讀寫/AC:A唯讀B讀寫/KeyB:不能讀寫</value>
+  </data>
+  <data name="comboBox4.Items6" xml:space="preserve">
+    <value>[不可逆]KeyA:不能讀寫/AC:AB唯讀/KeyB:不能讀寫</value>
+  </data>
+  <data name="comboBox4.Items7" xml:space="preserve">
+    <value>[不可逆]KeyA:不能讀寫/AC:AB唯讀/KeyB:不能讀寫(重複了?)</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>S50HTool-beta</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>扇區列表</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>扇區資訊</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>輸出</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>第0塊</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>第1塊</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>第2塊</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>KeyA</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>KeyB</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>0塊權限</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>1塊權限</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>2塊權限</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Key/ACbits權限</value>
+  </data>
+  <data name="labelCurSec.Text" xml:space="preserve">
+    <value>當前選定扇區：？？</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="richTextBox1.Lines[0]" xml:space="preserve">
+    <value>歡迎使用M1T的整合編輯器S50HTool！</value>
+  </data>
+  <data name="richTextBox1.Lines[1]" xml:space="preserve">
+    <value>開啟檔案請點左上角檔案-開啟或Ctrl+O</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>歡迎使用M1T的整合編輯器S50HTool！
+開啟檔案請點左上角檔案-開啟或Ctrl+O
+</value>
+  </data>
+  <data name="保存ToolStripMenuItem.Text" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="修改UIDToolStripMenuItem.Text" xml:space="preserve">
+    <value>修改UID</value>
+  </data>
+  <data name="列出全卡密钥ToolStripMenuItem.Text" xml:space="preserve">
+    <value>列出全卡密鑰</value>
+  </data>
+  <data name="另存为ToolStripMenuItem.Text" xml:space="preserve">
+    <value>另存為</value>
+  </data>
+  <data name="导入MCT格式ToolStripMenuItem.Text" xml:space="preserve">
+    <value>匯入MCT格式</value>
+  </data>
+  <data name="导出为MCT格式ToolStripMenuItem.Text" xml:space="preserve">
+    <value>匯出為MCT格式</value>
+  </data>
+  <data name="导出密钥字典ToolStripMenuItem.Text" xml:space="preserve">
+    <value>匯出密鑰字典</value>
+  </data>
+  <data name="工具ToolStripMenuItem.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="打开ToolStripMenuItem.Text" xml:space="preserve">
+    <value>開啟</value>
+  </data>
+  <data name="文件ToolStripMenuItem.Text" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="新建ToolStripMenuItem.Text" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="检查全卡ToolStripMenuItem.Text" xml:space="preserve">
+    <value>檢查全卡</value>
+  </data>
+  <data name="检查并纠正全卡ToolStripMenuItem.Text" xml:space="preserve">
+    <value>檢查並糾正全卡</value>
+  </data>
+  <data name="退出ToolStripMenuItem.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+</root>

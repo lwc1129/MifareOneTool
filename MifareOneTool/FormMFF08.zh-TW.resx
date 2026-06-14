@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonClr.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="buttonKeyWrite.Text" xml:space="preserve">
+    <value>修復寫入
+有密碼
+CUID卡</value>
+  </data>
+  <data name="buttonLoadKey.Text" xml:space="preserve">
+    <value>載入…</value>
+  </data>
+  <data name="buttonWriteEmpty.Text" xml:space="preserve">
+    <value>修復寫入
+無密空白
+CUID卡</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>MFF08 Tool-CUID修復工具</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>日誌</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>本工具由nfc-mfclassic做少許修改而來。可用於1K大小CUID卡0塊損壞的修復。
+本工具可以修復：SAK寫錯（不認卡類型）、ATQA寫錯（不認卡大小），對於BCC寫錯暫時無能為力。
+請準備好你最後一次寫入該卡導致0塊損壞的卡資料檔案（如果卡片有加密）。</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>最後一次寫卡導致0塊損壞的卡資料檔案：</value>
+  </data>
+  <data name="logBox.Lines[0]" xml:space="preserve">
+    <value>每個人使用CUID卡的時候，總會因不了解或是不經意犯下一些小錯誤。</value>
+  </data>
+  <data name="logBox.Lines[1]" xml:space="preserve">
+    <value>比如使用編輯器修改UID卻沒有改BCC，SAK=28的卡片解密後的檔案直接寫入，又或是從S70卡片匯入資料寫入1K卡卻沒有更正ATQA。</value>
+  </data>
+  <data name="logBox.Lines[2]" xml:space="preserve">
+    <value>MFF08工具給了你一次修復這些損壞卡片的機會。</value>
+  </data>
+  <data name="logBox.Lines[3]" xml:space="preserve">
+    <value>------------------------------------------------------------------------</value>
+  </data>
+  <data name="logBox.Text" xml:space="preserve">
+    <value>每個人使用CUID卡的時候，總會因不了解或是不經意犯下一些小錯誤。
+比如使用編輯器修改UID卻沒有改BCC，SAK=28的卡片解密後的檔案直接寫入，又或是從S70卡片匯入資料寫入1K卡卻沒有更正ATQA。
+MFF08工具給了你一次修復這些損壞卡片的機會。
+------------------------------------------------------------------------
+
+</value>
+  </data>
+</root>
