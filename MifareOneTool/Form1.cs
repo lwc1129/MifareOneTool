@@ -13,7 +13,6 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Globalization;
 
 namespace MifareOneTool
@@ -70,7 +69,7 @@ namespace MifareOneTool
                     if (File.Exists(omfd) && new FileInfo(omfd).Length > 1)
                     {
                         Directory.CreateDirectory("auto_keys");
-                        string filename = "auto_keys\\" + lastuid + "_" + DateTime.Now.ToString().Replace("/", "-").Replace(" ", "_").Replace(":", "-") + ".mfd";
+                        string filename = Path.Combine("auto_keys", lastuid + "_" + DateTime.Now.ToString().Replace("/", "-").Replace(" ", "_").Replace(":", "-") + ".mfd");
                         if (File.Exists(filename))
                         {
                             File.Delete(filename);
@@ -309,7 +308,7 @@ namespace MifareOneTool
             files.Reverse();//保证拿到最新的
             for (int i = 0; i < files.Count; i++)
             {
-                if (files[i].StartsWith("auto_keys\\" + uid))
+                if (files[i].StartsWith(Path.Combine("auto_keys", uid)))
                 {
                     logAppend(Resources.已找到_K + files[i]);
                     keymfd = files[i];
@@ -1311,18 +1310,13 @@ namespace MifareOneTool
             omfd = rmfd;
         }
 
-        [DllImport("user32.dll", EntryPoint = "SetWindowText")]
-        public static extern int SetWindowText(IntPtr hwnd, string lpString);
-        [DllImport("user32", SetLastError = true)]
-        public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
-
         void mfocCMD(object sender, DoWorkEventArgs e)
         {
             if (lprocess) { return; }
             ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
             string[] args = (string[])e.Argument;
             psi.WorkingDirectory = "./";
-            psi.Arguments = "/T:0A " + args[2] + @" nfc-bin\mfoc.exe " + args[1] + " -O \"" + args[0] + "\"";
+            psi.Arguments = "/T:0A " + args[2] + " " + Path.Combine("nfc-bin", "mfoc.exe") + " " + args[1] + " -O \"" + args[0] + "\"";
             lprocess = true;
             BackgroundWorker b = (BackgroundWorker)sender;
             process = Process.Start(psi); 

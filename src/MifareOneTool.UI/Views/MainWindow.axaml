@@ -1,0 +1,110 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MifareOneTool.UI.ViewModels"
+        x:Class="MifareOneTool.UI.Views.MainWindow"
+        Title="MifareOneTool"
+        Width="900" Height="700"
+        MinWidth="800" MinHeight="600">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Command="{Binding OpenFileCommand}" InputGesture="Ctrl+O"/>
+                <MenuItem Header="_Save" Command="{Binding SaveFileCommand}" InputGesture="Ctrl+S"/>
+                <MenuItem Header="Save _As..." Command="{Binding SaveAsFileCommand}"/>
+                <Separator/>
+                <MenuItem Header="Import MCT..." Command="{Binding ImportMctCommand}"/>
+                <MenuItem Header="Export MCT..." Command="{Binding ExportMctCommand}"/>
+                <MenuItem Header="Export Key Dict..." Command="{Binding ExportKeyDictCommand}"/>
+                <Separator/>
+                <MenuItem Header="E_xit" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Hex Editor (S50HTool)..." Command="{Binding OpenHexToolCommand}"/>
+                <MenuItem Header="Diff..." Command="{Binding OpenDiffCommand}"/>
+                <MenuItem Header="Hard Nested Attack..." Command="{Binding OpenHardNesCommand}"/>
+                <MenuItem Header="MFF08 Tool..." Command="{Binding OpenMff08Command}"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Command="{Binding AboutCommand}"/>
+                <MenuItem Header="Check for Updates" Command="{Binding CheckUpdateCommand}"/>
+            </MenuItem>
+        </Menu>
+
+        <Border DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" BorderBrush="#DDDDDD" Padding="8,4">
+            <TextBlock Text="{Binding StatusText}"/>
+        </Border>
+
+        <Grid ColumnDefinitions="220,*" RowDefinitions="*">
+            <!-- Left panel: device & actions -->
+            <ScrollViewer Grid.Column="0" Margin="8">
+                <StackPanel Spacing="8">
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Padding="6">
+                        <StackPanel>
+                            <TextBlock Text="Device" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                            <Button Content="Scan Devices" Command="{Binding ScanDevicesCommand}" HorizontalAlignment="Stretch"/>
+                            <ComboBox ItemsSource="{Binding Devices}" SelectedItem="{Binding SelectedDevice}"
+                                      HorizontalAlignment="Stretch" Margin="0,4,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Padding="6">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="Read Card" FontWeight="SemiBold"/>
+                            <CheckBox Content="Auto KeyAB" IsChecked="{Binding AutoABN}"/>
+                            <Button Content="Read (mfoc)" Command="{Binding ReadMfocCommand}" HorizontalAlignment="Stretch"/>
+                            <Button Content="Read (mfcuk)" Command="{Binding ReadMfcukCommand}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Padding="6">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="Write Card" FontWeight="SemiBold"/>
+                            <CheckBox Content="Write Verify" IsChecked="{Binding WriteCheck}"/>
+                            <Button Content="Write Block 0" Command="{Binding WriteBlock0Command}" HorizontalAlignment="Stretch"/>
+                            <Button Content="Write Full" Command="{Binding WriteFullCommand}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Padding="6">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="UID" FontWeight="SemiBold"/>
+                            <TextBox Watermark="UID (hex)" Text="{Binding UidText}"/>
+                            <Button Content="Write UID" Command="{Binding WriteUidCommand}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="4" Padding="6">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="Language" FontWeight="SemiBold"/>
+                            <ComboBox ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}"
+                                      HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Right panel: log output -->
+            <DockPanel Grid.Column="1" Margin="0,8,8,8">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,4" Spacing="8">
+                    <TextBlock Text="Output" VerticalAlignment="Center" FontWeight="SemiBold"/>
+                    <Button Content="Clear" Command="{Binding ClearLogCommand}"/>
+                </StackPanel>
+                <ScrollViewer>
+                    <TextBox Text="{Binding LogText}"
+                             AcceptsReturn="True"
+                             IsReadOnly="True"
+                             FontFamily="Courier New,Consolas,monospace"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Stretch"/>
+                </ScrollViewer>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>
