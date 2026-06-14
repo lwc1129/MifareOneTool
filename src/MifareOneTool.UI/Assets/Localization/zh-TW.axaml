@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <!-- Menu -->
+  <sys:String x:Key="Menu.File">檔案</sys:String>
+  <sys:String x:Key="Menu.Open">開啟</sys:String>
+  <sys:String x:Key="Menu.Save">儲存</sys:String>
+  <sys:String x:Key="Menu.SaveAs">另存為...</sys:String>
+  <sys:String x:Key="Menu.ImportMct">匯入 MCT...</sys:String>
+  <sys:String x:Key="Menu.ExportMct">匯出 MCT...</sys:String>
+  <sys:String x:Key="Menu.ExportKeyDict">匯出密鑰字典...</sys:String>
+  <sys:String x:Key="Menu.Exit">退出</sys:String>
+  <sys:String x:Key="Menu.Tools">工具</sys:String>
+  <sys:String x:Key="Menu.HexTool">Hex 編輯器 (S50HTool)...</sys:String>
+  <sys:String x:Key="Menu.Diff">比較...</sys:String>
+  <sys:String x:Key="Menu.HardNes">Hard Nested 攻擊...</sys:String>
+  <sys:String x:Key="Menu.Mff08">MFF08 工具...</sys:String>
+  <sys:String x:Key="Menu.Help">說明</sys:String>
+  <sys:String x:Key="Menu.About">關於</sys:String>
+  <sys:String x:Key="Menu.CheckUpdate">檢查更新</sys:String>
+  <!-- Panels -->
+  <sys:String x:Key="Panel.Device">裝置</sys:String>
+  <sys:String x:Key="Panel.ScanDevices">掃描裝置</sys:String>
+  <sys:String x:Key="Panel.ReadCard">讀取卡片</sys:String>
+  <sys:String x:Key="Panel.AutoKeyAB">自動 KeyAB</sys:String>
+  <sys:String x:Key="Panel.ReadMfoc">讀取 (mfoc)</sys:String>
+  <sys:String x:Key="Panel.ReadMfcuk">讀取 (mfcuk)</sys:String>
+  <sys:String x:Key="Panel.WriteCard">寫入卡片</sys:String>
+  <sys:String x:Key="Panel.WriteVerify">寫入驗證</sys:String>
+  <sys:String x:Key="Panel.WriteBlock0">寫入第0塊</sys:String>
+  <sys:String x:Key="Panel.WriteFull">完整寫入</sys:String>
+  <sys:String x:Key="Panel.UID">UID</sys:String>
+  <sys:String x:Key="Panel.UIDHint">UID（十六進位）</sys:String>
+  <sys:String x:Key="Panel.WriteUID">寫入 UID</sys:String>
+  <sys:String x:Key="Panel.Language">語言</sys:String>
+  <!-- Output -->
+  <sys:String x:Key="Output.Title">輸出</sys:String>
+  <sys:String x:Key="Output.Clear">清除</sys:String>
+  <!-- Status -->
+  <sys:String x:Key="Status.Ready">就緒</sys:String>
+  <sys:String x:Key="Status.Scanning">正在掃描裝置...</sys:String>
+  <!-- Messages -->
+  <sys:String x:Key="Msg.RestartRequired">語言已更改，重新啟動後生效。</sys:String>
+  <sys:String x:Key="Msg.ScanNotImpl">裝置掃描尚未實作。</sys:String>
+</ResourceDictionary>

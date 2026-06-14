@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <!-- Menu -->
+  <sys:String x:Key="Menu.File">File</sys:String>
+  <sys:String x:Key="Menu.Open">Open</sys:String>
+  <sys:String x:Key="Menu.Save">Save</sys:String>
+  <sys:String x:Key="Menu.SaveAs">Save As...</sys:String>
+  <sys:String x:Key="Menu.ImportMct">Import MCT...</sys:String>
+  <sys:String x:Key="Menu.ExportMct">Export MCT...</sys:String>
+  <sys:String x:Key="Menu.ExportKeyDict">Export Key Dict...</sys:String>
+  <sys:String x:Key="Menu.Exit">Exit</sys:String>
+  <sys:String x:Key="Menu.Tools">Tools</sys:String>
+  <sys:String x:Key="Menu.HexTool">Hex Editor (S50HTool)...</sys:String>
+  <sys:String x:Key="Menu.Diff">Diff...</sys:String>
+  <sys:String x:Key="Menu.HardNes">Hard Nested Attack...</sys:String>
+  <sys:String x:Key="Menu.Mff08">MFF08 Tool...</sys:String>
+  <sys:String x:Key="Menu.Help">Help</sys:String>
+  <sys:String x:Key="Menu.About">About</sys:String>
+  <sys:String x:Key="Menu.CheckUpdate">Check for Updates</sys:String>
+  <!-- Panels -->
+  <sys:String x:Key="Panel.Device">Device</sys:String>
+  <sys:String x:Key="Panel.ScanDevices">Scan Devices</sys:String>
+  <sys:String x:Key="Panel.ReadCard">Read Card</sys:String>
+  <sys:String x:Key="Panel.AutoKeyAB">Auto KeyAB</sys:String>
+  <sys:String x:Key="Panel.ReadMfoc">Read (mfoc)</sys:String>
+  <sys:String x:Key="Panel.ReadMfcuk">Read (mfcuk)</sys:String>
+  <sys:String x:Key="Panel.WriteCard">Write Card</sys:String>
+  <sys:String x:Key="Panel.WriteVerify">Write Verify</sys:String>
+  <sys:String x:Key="Panel.WriteBlock0">Write Block 0</sys:String>
+  <sys:String x:Key="Panel.WriteFull">Write Full</sys:String>
+  <sys:String x:Key="Panel.UID">UID</sys:String>
+  <sys:String x:Key="Panel.UIDHint">UID (hex)</sys:String>
+  <sys:String x:Key="Panel.WriteUID">Write UID</sys:String>
+  <sys:String x:Key="Panel.Language">Language</sys:String>
+  <!-- Output -->
+  <sys:String x:Key="Output.Title">Output</sys:String>
+  <sys:String x:Key="Output.Clear">Clear</sys:String>
+  <!-- Status -->
+  <sys:String x:Key="Status.Ready">Ready</sys:String>
+  <sys:String x:Key="Status.Scanning">Scanning devices...</sys:String>
+  <!-- Messages -->
+  <sys:String x:Key="Msg.RestartRequired">Language changed. Restart to apply.</sys:String>
+  <sys:String x:Key="Msg.ScanNotImpl">Device scan not yet implemented.</sys:String>
+</ResourceDictionary>
