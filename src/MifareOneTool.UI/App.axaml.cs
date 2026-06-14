@@ -22,7 +22,15 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow();
+            var window = new MainWindow();
+            desktop.MainWindow = window;
+
+            // Check for missing NFC tools and surface warnings in the log
+            var missing = DependencyChecker.Check().FindAll(t => !t.Found);
+            if (missing.Count > 0 && window.DataContext is ViewModels.MainWindowViewModel vm)
+            {
+                vm.WarnMissingTools(missing, DependencyChecker.InstallHint());
+            }
         }
         base.OnFrameworkInitializationCompleted();
     }

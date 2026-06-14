@@ -26,4 +26,20 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
+
+  <!-- Bundle Windows NFC tools alongside the published app -->
+  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <Content Include="nfc-bin\**"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest"
+             Link="nfc-bin\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <!-- Bundle macOS NFC tools alongside the published app -->
+  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+    <Content Include="nfc-bin-macos\**"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest"
+             Link="nfc-bin-macos\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
 </Project>

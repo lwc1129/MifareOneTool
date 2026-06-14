@@ -80,6 +80,20 @@ public partial class MainWindowViewModel : ObservableObject
         _settings.WriteCheck = value; _settings.Save();
     }
 
+    // ── Startup dependency warnings ───────────────────────────────────────
+
+    public void WarnMissingTools(
+        System.Collections.Generic.List<MifareOneTool.Core.Services.ToolStatus> missing,
+        string hint)
+    {
+        AppendLog("⚠ Missing NFC tools — some operations will not work:");
+        foreach (var t in missing)
+            AppendLog($"  ✗ {t.Name}  (expected: {t.ResolvedPath})");
+        AppendLog("");
+        AppendLog(hint);
+        AppendLog("");
+    }
+
     // ── Logging helpers ───────────────────────────────────────────────────
 
     private void AppendLog(string? line)
