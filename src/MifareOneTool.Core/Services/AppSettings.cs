@@ -25,13 +25,15 @@ namespace MifareOneTool.Core.Services
         private static string SettingsPath =>
             Path.Combine(AppContext.BaseDirectory, "settings.json");
 
-        public static AppSettings Load()
+        public static AppSettings Load() => LoadFrom(SettingsPath);
+
+        public static AppSettings LoadFrom(string path)
         {
             try
             {
-                if (File.Exists(SettingsPath))
+                if (File.Exists(path))
                 {
-                    string json = File.ReadAllText(SettingsPath);
+                    string json = File.ReadAllText(path);
                     return JsonSerializer.Deserialize<AppSettings>(json, _jsonOpts) ?? new AppSettings();
                 }
             }
@@ -39,10 +41,12 @@ namespace MifareOneTool.Core.Services
             return new AppSettings();
         }
 
-        public void Save()
+        public void Save() => SaveTo(SettingsPath);
+
+        public void SaveTo(string path)
         {
             string json = JsonSerializer.Serialize(this, _jsonOpts);
-            File.WriteAllText(SettingsPath, json);
+            File.WriteAllText(path, json);
         }
     }
 }
