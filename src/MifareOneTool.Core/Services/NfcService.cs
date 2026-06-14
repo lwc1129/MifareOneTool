@@ -41,11 +41,15 @@ namespace MifareOneTool.Core.Services
             await RunToolAsync("nfc-scan-device", "", progress, ct,
                 onLine: line =>
                 {
-                    if (!string.IsNullOrEmpty(line))
-                    {
-                        var m = Regex.Match(line, pattern);
-                        if (m.Success) devices.Add(m.Value);
-                    }
+                    if (string.IsNullOrWhiteSpace(line)) return;
+                    var m = Regex.Match(line.Trim(), pattern);
+                    if (!m.Success) return;
+                    string connstring = m.Value;
+                    // Ensure baud rate is present (some libnfc versions omit it)
+                    if (!Regex.IsMatch(connstring, @":\d+$"))
+                        connstring += ":115200";
+                    if (!devices.Contains(connstring))
+                        devices.Add(connstring);
                 });
 
             return devices;

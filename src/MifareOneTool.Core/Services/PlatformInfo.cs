@@ -43,7 +43,7 @@ namespace MifareOneTool.Core.Services
 
         public static string DeviceConnstringPattern =>
             IsWindows
-                ? @"pn532_uart:COM\d+:\d+"
-                : @"pn532_uart:/dev/tty[\w.]+:\d+";
+                ? @"pn532_uart:COM\d+(:\d+)?"
+                : @"pn532_uart:/dev/tty[\w.]+(:\d+)?";
     }
 }
